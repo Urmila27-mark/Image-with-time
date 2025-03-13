@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Viewer with Date, Time, Greeting, and Stickers</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Full-Screen Image and Time -->
+    <div id="imageContainer" class="image-container">
+        <button id="backButton" onclick="goBack()">Back to Grid</button>
+        <img id="largeImage" src="" alt="Large Image">
+        <div id="datetime" class="datetime-container">
+            <div id="greeting"></div>
+            <div id="time"></div>
+            <div id="day-date"></div>
+        </div>
+    </div>
+
+    <section class="Welcoming"> Welcome, DKAUT! </section>
+
+    <!-- Image Grid -->
+    <div id="imageGrid" class="image-grid">
+        <div class="image-box" onclick="displayImage('https://images.unsplash.com/photo-1524650888210-7eadb17a0f9b')">
+            <img src="https://images.unsplash.com/photo-1524650888210-7eadb17a0f9b" alt="Image 1">
+        </div>
+        <div class="image-box" onclick="displayImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2aa0ILAWLluJnQcMoNdphIlnlPchDZVW2aw&s')">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2aa0ILAWLluJnQcMoNdphIlnlPchDZVW2aw&s" alt="Image 2">
+        </div>
+        <div class="image-box" onclick="displayImage('https://www.wallpapersifu.com/wp-content/uploads/2023/07/SMP-Scenery-074.jpg')">
+            <img src="https://www.wallpapersifu.com/wp-content/uploads/2023/07/SMP-Scenery-074.jpg" alt="Image 3">
+        </div>
+        <div class="image-box" onclick="displayImage('https://w0.peakpx.com/wallpaper/645/16/HD-wallpaper-lake-relax-lakes-nature-water-relaxing-thumbnail.jpg')">
+            <img src="https://w0.peakpx.com/wallpaper/645/16/HD-wallpaper-lake-relax-lakes-nature-water-relaxing-thumbnail.jpg" alt="Image 4">
+        </div>
+        <div class="image-box" onclick="displayImage('https://i.ytimg.com/vi/2OYar8OHEOU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAe2BuLcAaG4DdBm-cJimFVUv2imA')">
+            <img src="https://i.ytimg.com/vi/2OYar8OHEOU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAe2BuLcAaG4DdBm-cJimFVUv2imA" alt="Image 5">
+        </div>
+        <div class="image-box" onclick="displayImage('https://media.istockphoto.com/id/1455172237/photo/lavender-at-sunrise.jpg?s=612x612&w=0&k=20&c=kqIkksrTQq1yTpXdddysQKjE56AKlA6ed2F6KPua-iw=')">
+            <img src="https://media.istockphoto.com/id/1455172237/photo/lavender-at-sunrise.jpg?s=612x612&w=0&k=20&c=kqIkksrTQq1yTpXdddysQKjE56AKlA6ed2F6KPua-iw=" alt="Image 6">
+        </div>
+        <div class="image-box" onclick="displayImage('https://wallpapercave.com/wp/wp8875239.jpg')">
+            <img src="https://wallpapercave.com/wp/wp8875239.jpg" alt="Image 7">
+        </div>
+        <div class="image-box" onclick="displayImage('https://thumbs.dreamstime.com/b/calm-river-nature-background-water-lake-sunset-time-forest-other-side-landscape-61851291.jpg')">
+            <img src="https://thumbs.dreamstime.com/b/calm-river-nature-background-water-lake-sunset-time-forest-other-side-landscape-61851291.jpg" alt="Image 8">
+        </div>
+        <div class="image-box" onclick="displayImage('https://images.unsplash.com/photo-1600033405478-40379eb5ffc6?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cmVsYXhpbmclMjBuYXR1cmV8ZW58MHx8MHx8fDA%3D')">
+            <img src="https://images.unsplash.com/photo-1600033405478-40379eb5ffc6?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cmVsYXhpbmclMjBuYXR1cmV8ZW58MHx8MHx8fDA%3D" alt="Image 9">
+        </div>
+        <div class="image-box" onclick="displayImage('https://i.pinimg.com/564x/c4/13/63/c41363e81ffd387c8bf499b7817a1b56.jpg')">
+            <img src="https://i.pinimg.com/564x/c4/13/63/c41363e81ffd387c8bf499b7817a1b56.jpg" alt="Image 10">
+        </div>
+        <div class="image-box" onclick="displayImage('https://static.vecteezy.com/system/resources/thumbnails/030/486/379/small/a-calm-stream-tenderly-winding-through-a-lavish-green-scene-with-overhanging-trees-ai-generated-photo.jpeg')">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/030/486/379/small/a-calm-stream-tenderly-winding-through-a-lavish-green-scene-with-overhanging-trees-ai-generated-photo.jpeg" alt="Image 11">
+        </div>
+        <div class="image-box" onclick="displayImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHg2NXVVV9c4hHigMMAhdEZAZVb4OQtTg5pQ&s')">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHg2NXVVV9c4hHigMMAhdEZAZVb4OQtTg5pQ&s" alt="Image 12">
+        </div>
+        <div class="image-box" onclick="displayImage('https://mrwallpaper.com/images/high/experience-the-calming-effects-of-nature-with-this-soothing-landscape-j54a0zkeo6uh6b7b.jpg')">
+            <img src="https://mrwallpaper.com/images/high/experience-the-calming-effects-of-nature-with-this-soothing-landscape-j54a0zkeo6uh6b7b.jpg" alt="Image 13">
+        </div>
+        <div class="image-box" onclick="displayImage('https://i.ytimg.com/vi/BHACKCNDMW8/maxresdefault.jpg')">
+            <img src="https://i.ytimg.com/vi/BHACKCNDMW8/maxresdefault.jpg" alt="Image 14">
+        </div>
+        <div class="image-box" onclick="displayImage('https://static.vecteezy.com/system/resources/thumbnails/046/736/756/small/gentle-sunlight-filters-through-a-defocused-canopy-of-leaves-casting-a-hazy-glow-over-the-secret-escape-nestled-within-the-grove-the-blurred-background-adds-to-the-sense-of-seclusion-photo.jpg')">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/046/736/756/small/gentle-sunlight-filters-through-a-defocused-canopy-of-leaves-casting-a-hazy-glow-over-the-secret-escape-nestled-within-the-grove-the-blurred-background-adds-to-the-sense-of-seclusion-photo.jpg" alt="Image 15">
+        </div>
+        <div class="image-box" onclick="displayImage('https://libraryitems.insighttimer.com/b4e5u2z1a6a7s1j9n7k8z9b9y1m8h4r5t7g5v5f0/pictures/tiny_rectangle_large.jpeg')">
+            <img src="https://libraryitems.insighttimer.com/b4e5u2z1a6a7s1j9n7k8z9b9y1m8h4r5t7g5v5f0/pictures/tiny_rectangle_large.jpeg" alt="Image 16">
+        </div>
+        <div class="image-box" onclick="displayImage('https://wallpapers.com/images/hd/relaxing-background-xsanf0hmvrzvwuox.jpg')">
+            <img src="https://wallpapers.com/images/hd/relaxing-background-xsanf0hmvrzvwuox.jpg" alt="Image 17">
+        </div>
+        <div class="image-box" onclick="displayImage('https://www.shutterstock.com/image-photo/soothing-abstract-picture-water-sky-260nw-1114559285.jpg')">
+            <img src="https://www.shutterstock.com/image-photo/soothing-abstract-picture-water-sky-260nw-1114559285.jpg" alt="Image 18">
+        </div>
+        <div class="image-box" onclick="displayImage('https://i1.sndcdn.com/artworks-000231939983-o7ozk7-t1080x1080.jpg')">
+            <img src="https://i1.sndcdn.com/artworks-000231939983-o7ozk7-t1080x1080.jpg" alt="Image 19">
+        </div>
+        <div class="image-box" onclick="displayImage('https://i.ytimg.com/vi/ZM2VDhYCSXM/maxresdefault.jpg')">
+            <img src="https://i.ytimg.com/vi/ZM2VDhYCSXM/maxresdefault.jpg" alt="Image 20">
+        </div>
+        <div class="image-box" onclick="displayImage('https://i.ytimg.com/vi/eKFTSSKCzWA/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGDcgZSgdMA8=&rs=AOn4CLCe9zIyE10Q8Lrz4aVpYixZJgtkGA')">
+            <img src="https://i.ytimg.com/vi/eKFTSSKCzWA/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGDcgZSgdMA8=&rs=AOn4CLCe9zIyE10Q8Lrz4aVpYixZJgtkGA" alt="Image 21">
+        </div>
+        <div class="image-box" onclick="displayImage('https://depositphotos-blog.s3.eu-west-1.amazonaws.com/uploads/2017/07/Soothing-nature-backgrounds-2.webp')">
+            <img src="https://depositphotos-blog.s3.eu-west-1.amazonaws.com/uploads/2017/07/Soothing-nature-backgrounds-2.webp" alt="Image 22">
+        </div>
+        <div class="image-box" onclick="displayImage('https://w0.peakpx.com/wallpaper/286/624/HD-wallpaper-relax-nature-green-trees.jpg')">
+            <img src="https://w0.peakpx.com/wallpaper/286/624/HD-wallpaper-relax-nature-green-trees.jpg" alt="Image 23">
+        </div>
+        <div class="image-box" onclick="displayImage('https://external-preview.redd.it/-YWdkFQ6BljhSwhJFct5OfbPHu78GT8UpPp2wZbCywc.jpg?auto=webp&s=e456ce207cc504f29a593aab97a1f2c57d6fd006')">
+            <img src="https://external-preview.redd.it/-YWdkFQ6BljhSwhJFct5OfbPHu78GT8UpPp2wZbCywc.jpg?auto=webp&s=e456ce207cc504f29a593aab97a1f2c57d6fd006" alt="Image 24">
+        </div>
+        <div class="image-box" onclick="displayImage('https://static.wixstatic.com/media/150780_15dc4816c2d34053a9285d837a022d2b~mv2.jpg/v1/fill/w_568,h_378,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/150780_15dc4816c2d34053a9285d837a022d2b~mv2.jpg')">
+            <img src="https://static.wixstatic.com/media/150780_15dc4816c2d34053a9285d837a022d2b~mv2.jpg/v1/fill/w_568,h_378,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/150780_15dc4816c2d34053a9285d837a022d2b~mv2.jpg" alt="Image 25">
+        </div>
+        <div class="image-box" onclick="displayImage('https://media.istockphoto.com/id/506856658/photo/beautiful-nature-at-morning-in-misty-spring-forest-with-sun.jpg?s=612x612&w=0&k=20&c=5OyK3doU0H4OGHueN1Coa2r9deiWyly_sJRSddgRnRU=')">
+            <img src="https://media.istockphoto.com/id/506856658/photo/beautiful-nature-at-morning-in-misty-spring-forest-with-sun.jpg?s=612x612&w=0&k=20&c=5OyK3doU0H4OGHueN1Coa2r9deiWyly_sJRSddgRnRU=" alt="Image 26">
+        </div>
+        <div class="image-box" onclick="displayImage('https://www.naturerelaxation.com/cdn/shop/files/glacierbg.jpg?v=1613677492')">
+            <img src="https://www.naturerelaxation.com/cdn/shop/files/glacierbg.jpg?v=1613677492" alt="Image 27">
+        </div>
+        <div class="image-box" onclick="displayImage('https://static.vecteezy.com/system/resources/thumbnails/046/736/756/small/gentle-sunlight-filters-through-a-defocused-canopy-of-leaves-casting-a-hazy-glow-over-the-secret-escape-nestled-within-the-grove-the-blurred-background-adds-to-the-sense-of-seclusion-photo.jpg')">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/046/736/756/small/gentle-sunlight-filters-through-a-defocused-canopy-of-leaves-casting-a-hazy-glow-over-the-secret-escape-nestled-within-the-grove-the-blurred-background-adds-to-the-sense-of-seclusion-photo.jpg" alt="Image 28">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
